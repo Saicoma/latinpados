@@ -18,9 +18,9 @@ class CreateDetalleProductosTable extends Migration
             $table->bigIncrements('id'); // Id del detalle de productos asociados a la venta
             $table->string('nombre')->nullable(); // Nombre del detalle de producto (Nulo)
             $table->integer('valorDetalle'); // Valor del detalle de producto
-            $table->integer('stock'); // Stock del producto especifico
+            $table->integer('stock')->default(0); // Stock del producto especifico
             $table->string('descripcion')->nullable(); // Descripcion del producto especifico (Nulo)
-            $table->string('rutaArchivo'); // Ruta de la foto del producto especifico
+            $table->string('rutaArchivo')->nullable(); // Ruta de la foto del producto especifico (Nulo)
             // Claves foraneas
             $table->unsignedBigInteger('idProducto'); // Id del producto general especifico
             $table->foreign('idProducto')->references('id')->on('producto');

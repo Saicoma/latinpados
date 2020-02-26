@@ -18,10 +18,10 @@ class CreateProductosTable extends Migration
             $table->bigIncrements('id'); // Id del producto (Auto incremental)
             $table->integer('codigoProducto')->unique(); // Codigo del producto (Unico)
             $table->integer('valorProducto'); // Valor del producto general
-            $table->string('talla'); // Talla del producto
-            $table->string('color'); // Color del producto
+            $table->string('talla')->nullable(); // Talla del producto (Nulo)
+            $table->string('color')->nullable(); // Color del producto (Nulo)
             $table->string('sexo')->nullable(); // Sexo del producto en caso de tenerlo (Nulo)
-            $table->string('tipoManga'); // Tipo de manga en caso de tenerla
+            $table->string('tipoManga')->nullable(); // Tipo de manga en caso de tenerla (Nulo)
             $table->string('descripcion')->nullable(); // Descripcion del producto (Nulo)
             $table->string('rutaArchivo')->nullable(); // Ruta de la foto del producto (Nulo)
             // Claves foraneas

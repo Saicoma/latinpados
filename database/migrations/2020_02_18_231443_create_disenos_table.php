@@ -21,7 +21,7 @@ class CreateDisenosTable extends Migration
             $table->string('tipoDiseno'); // Tipo de diseño
             $table->string('dimenciones'); // Dimenciones del diseño
             $table->string('descripcion')->nullable(); // Descripcion del diseño (Nulo)
-            $table->string('rutaArchivo'); // Ruta de la foto del diseño
+            $table->string('rutaArchivo')->nullable(); // Ruta de la foto del diseño
             // Variables temporales
             $table->timestamps();
         });

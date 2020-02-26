@@ -128,3 +128,18 @@ Route::post('detalleDiseno','DetalleDisenoController@store');
 Route::get('detalleDiseno/{id}','DetalleDisenoController@show');
 Route::put('detalleDiseno/{id}','DetalleDisenoController@update');
 Route::delete('detalleDiseno/{id}','DetalleDisenoController@destroy');
+
+// Rutas para autenticacion mediante Passport 
+Route::group([
+    'prefix' => 'auth'
+], function () {
+    Route::post('login', 'AuthController@login');
+    Route::post('signup', 'AuthController@signup');
+  
+    Route::group([
+      'middleware' => 'auth:api'
+    ], function() {
+        Route::get('logout', 'AuthController@logout');
+        Route::get('user', 'AuthController@user');
+    });
+});

@@ -19,10 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('nombre'); // Nombre del usuario
             $table->string('email')->unique(); // Email del usuario (Unico)
             $table->timestamp('email_verified_at')->nullable(); // Verificacion de correo (Nulo)
-            $table->string('rol'); // Rol del usuario
+            $table->string('rol')->default('Cliente'); // Rol del usuario, valor predefinido (Cliente)
             $table->string('direccion')->nullable(); // Direccion del usuario (Nulo)
-            $table->integer('telefono')->nulleable(); // Numero telefonico del usuario (Nulo)
-            $table->string('estadoUsuario'); // Estado de uso del usuario
+            $table->integer('telefono')->nullable(); // Numero telefonico del usuario (Nulo)
+            $table->string('estadoUsuario')->default('Habilitado'); // Estado de uso del usuario, valor predefinido (Habilitado)
             $table->string('password'); // Password del usuario
             $table->rememberToken(); // Para guardar el token activo
             // Atributos temporales

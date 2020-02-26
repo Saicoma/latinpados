@@ -18,9 +18,9 @@ class CreateInsumosTable extends Migration
             $table->bigIncrements('id'); // Id del insumo (Auto incremental)
             $table->string('codigo')->unique(); // Codigo del insumo (Unico)
             $table->string('nombre'); // Nombre del insumo
-            $table->integer('valorInsumo')->nullable(); // Valor del insumo (Nulo)
-            $table->float('stock'); // Stock del insumo en el almacen 
-            $table->string('unidadMedida'); // Unidad de medida del insumo
+            $table->integer('valorInsumo')->default(0); // Valor del insumo, valor predeterminado (0)
+            $table->float('stock')->default(0); // Stock del insumo en el almacen, varor predefinido (0)
+            $table->string('unidadMedida')->default('Unidad'); // Unidad de medida del insumo (NUlo)
             $table->string('tipoInsumo'); // Tipo del insumo
             $table->string('descripcion')->nullable(); // Descripcion del insumo (Nulo)
             // Atributos temporales

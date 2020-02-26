@@ -18,9 +18,9 @@ class CreateDetallePagosTable extends Migration
             $table->bigIncrements('id'); // Id del detalle de pago (Auto incremental)
             $table->integer('valor'); // Valor del detalle de pago
             $table->string('metodoPago'); // Metodo de pago del detalle
-            $table->string('estadoPago'); // Estado del pago 
+            $table->string('estadoPago'); // Estado del pago  
             $table->date('fechaInicio'); // Fecha de ingreso del detalle
-            $table->date('fechaFin'); // Fecha de pago del detalle
+            $table->date('fechaFin')->nullable(); // Fecha de pago del detalle (Nulo)
             $table->string('descripcion')->nullable(); // Descripcion del detalle (Nulo) 
             // Claves foraneas
             $table->unsignedBigInteger('idCompra'); // Id de la compra relacionada
