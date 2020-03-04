@@ -59,4 +59,16 @@ class AuthController extends Controller
         $user = Auth::user(); 
         return response()->json(['success' => $user], $this-> successStatus); 
     } 
+
+    /**
+     * Logout api (Revoke the token)
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function logout(Request $request){
+        $request->user()->token()->revoke();
+        return response()->json([
+            'message' => 'Successfully logged out'
+        ]);
+    }
 }
